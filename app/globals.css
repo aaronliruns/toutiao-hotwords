@@ -2,24 +2,54 @@
 @tailwind components;
 @tailwind utilities;
 
+/* Light mode (default) colors */
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  --background: #f2f4f7;
+  /* Very light gray for softer contrast */
+  --foreground: #1a1a1a;
+  /* Very dark gray (near-black) for better readability */
+  --accent: #0056b3;
+  /* Stronger blue for more obvious links and buttons */
+  --muted: #4b5563;
+  /* Darker gray for secondary text */
 }
 
+/* Dark mode colors */
 @media (prefers-color-scheme: dark) {
   :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+    --background: #f2f4f7;
+    /* Very light gray for softer contrast */
+    --foreground: #1a1a1a;
+    /* Very dark gray (near-black) for better readability */
+    --accent: #0056b3;
+    /* Stronger blue for more obvious links and buttons */
+    --muted: #4b5563;
+    /* Darker gray for secondary text */
   }
 }
 
+/* Apply the colors */
 body {
   color: var(--foreground);
+  /* High contrast text color */
   background: var(--background);
+  /* Comfortable background color */
   font-family: Arial, Helvetica, sans-serif;
 }
 
+/* Links and accentuated elements */
+a {
+  color: var(--accent);
+  /* Stronger accent color */
+  text-decoration: underline;
+}
+
+/* Muted text for secondary information */
+.muted-text {
+  color: var(--muted);
+}
+
+/* Custom utility for balanced text wrapping */
 @layer utilities {
   .text-balance {
     text-wrap: balance;
