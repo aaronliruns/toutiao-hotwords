@@ -12,7 +12,7 @@ export default function Home() {
 
       <Script
         id="LA_COLLECT"
-        src="//sdk.51.la/js-sdk-pro.min.js"
+        src="https://sdk.51.la/js-sdk-pro.min.js"
         strategy="afterInteractive"
         charset="UTF-8"
       />
