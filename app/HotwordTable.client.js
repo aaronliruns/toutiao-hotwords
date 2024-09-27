@@ -14,7 +14,7 @@ const HotwordTable = () => {
 
     const constructEncodedURL = (keyword) => {
         let encodedHotword = encodeURIComponent(keyword)
-        return `https://wm.m.sm.cn/s?from=wm871918&q=${encodedHotword}`
+        return `https://so.toutiao.com/search?keyword=${encodedHotword}&pd=synthesis&traffic_source=BM1128&original_source=1&source=client`
     };
 
     return (
@@ -33,7 +33,9 @@ const HotwordTable = () => {
                 <tbody>
                     {entries.map((entry, index) => (
                         <tr key={index} className="border-t">
-                            <td className="py-3 px-5">{entry.keywords}</td>
+                            <td className="py-3 px-5">
+                                <a href={constructEncodedURL(entry.keywords)}>{entry.keywords}</a>
+                            </td>
                             <td className="py-3 px-5">
                                 {entry.label === 'hot' ? '🔥' : entry.label === 'commercial' ? '💲' : null}
                             </td>

@@ -1,1 +1,1 @@
-LA.init({ id: "K4YG7rBE8sGqu3Gc", ck: "K4YG7rBE8sGqu3Gc", hashMode: true })
+LA.init({ id: "Jyy5zZaJbvwWNpwh", ck: "Jyy5zZaJbvwWNpwh", hashMode: true })
