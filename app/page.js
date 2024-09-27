@@ -10,18 +10,18 @@ export default function Home() {
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
-      {/* Add the external SDK script */}
       <Script
         id="LA_COLLECT"
         src="//sdk.51.la/js-sdk-pro.min.js"
-        strategy="afterInteractive" // Load script after page is interactive
+        strategy="afterInteractive"
         charset="UTF-8"
       />
 
-      {/* Add the LA.init call after the script loads */}
-      <Script id="LA_INIT" strategy="afterInteractive">
-        {`LA.init({id:"K4YG7rBE8sGqu3Gc",ck:"K4YG7rBE8sGqu3Gc",hashMode:true})`}
-      </Script>
+      <Script
+        src="/js/51la.js"
+        strategy="afterInteractive"
+        type="text/javascript"
+      />
 
       <main>
         <HotwordTable />
