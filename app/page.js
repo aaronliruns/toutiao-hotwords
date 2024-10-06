@@ -11,9 +11,10 @@ export default function Home() {
       </Head>
 
       <Script
-        src="/js/51la.js"
+        id="LA_COLLECT"
+        src="https://sdk.51.la/js-sdk-pro.min.js?id=Jyy5zZaJbvwWNpwh&ck=Jyy5zZaJbvwWNpwh"
         strategy="afterInteractive"
-        type="text/javascript"
+        charset="UTF-8"
       />
 
       <main>
