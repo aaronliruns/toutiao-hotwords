@@ -8,7 +8,7 @@ WORKDIR /app
 COPY package.json package-lock.json ./
 
 # Install dependencies using npm
-RUN npm install --production
+RUN npm install --registry=https://registry.npmmirror.com/
 
 # Copy the rest of the project files, including app and pages folders
 COPY . .
