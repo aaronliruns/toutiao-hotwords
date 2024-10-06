@@ -14,7 +14,7 @@ const HotwordTable = () => {
 
     const constructEncodedURL = (keyword) => {
         let encodedHotword = encodeURIComponent(keyword)
-        return `https://so.toutiao.com/search?keyword=${encodedHotword}&pd=synthesis&traffic_source=BM1124&original_source=1&source=client`
+        return `https://so.toutiao.com/search?keyword=${encodedHotword}&pd=synthesis&traffic_source=BM1124&original_source=5&source=client`
     };
 
     return (
