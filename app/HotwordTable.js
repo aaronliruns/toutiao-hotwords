@@ -1,20 +1,14 @@
-"use client";
+async function HotwordTable() {
 
-import React, { useEffect, useState } from 'react';
-
-const HotwordTable = () => {
-    const [entries, setEntries] = useState([]);
-
-    useEffect(() => {
-        fetch('/api/proxy')
-            .then(res => res.json())
-            .then(data => setEntries(data.data))
-            .catch(err => console.error('Error fetching data:', err));
-    }, []);
+    // Fetch data on the server
+    const response = await fetch('http://localhost:3000/api/proxy', {
+        cache: 'no-store' // Ensures the data is fetched fresh on every request
+    });
+    const entries = await response.json();
 
     const constructEncodedURL = (keyword) => {
         let encodedHotword = encodeURIComponent(keyword)
-        return `https://so.toutiao.com/search?keyword=${encodedHotword}&pd=synthesis&traffic_source=BM1124&original_source=1&source=client`
+        return `https://wm.m.sm.cn/s?from=wm890501&q=${encodedHotword}`
     };
 
     return (
@@ -27,21 +21,18 @@ const HotwordTable = () => {
                     <tr>
                         <th className="text-left py-3 px-5">热词</th>
                         <th className="text-left py-3 px-5">类</th>
-                        <th className="text-left py-3 px-5">访问</th>
                     </tr>
                 </thead>
                 <tbody>
                     {entries.map((entry, index) => (
                         <tr key={index} className="border-t">
-                            <td className="py-3 px-5">{entry.keywords}</td>
                             <td className="py-3 px-5">
-                                {entry.label === 'hot' ? '🔥' : entry.label === 'commercial' ? '💲' : null}
-                            </td>
+			    <a href={constructEncodedURL(entry.keyword)} className="flex items-center">
+                            {entry.keyword}
+                            </a>
+			    </td>
                             <td className="py-3 px-5">
-                                <a href={constructEncodedURL(entry.keywords)} className="flex items-center">
-                                    {entry.label && <img src={entry.label_icon} alt="label icon" className="h-6 w-6 mr-2" />}
-                                    &#x1F517;
-                                </a>
+                                💲
                             </td>
                         </tr>
                     ))}

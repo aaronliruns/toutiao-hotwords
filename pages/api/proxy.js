@@ -3,7 +3,7 @@ import axios from 'axios';
 import https from 'https';
 
 export default async function handler(req, res) {
-    const apiUrl = 'https://api.hotword.search.taola123.cn/v1/hotword/get/test';
+    const apiUrl = 'http://localhost:8080/hotwords?count=50';
 
     // Create an HTTPS Agent that ignores SSL certificate errors
     const agent = new https.Agent({  
